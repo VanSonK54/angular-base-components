@@ -1,0 +1,43 @@
+@import 'settings/global.settings';
+
+:host{
+width: 100%;
+max-width: 300px;
+}
+
+.uploader {
+    width: 100%;
+}
+
+// File Uploader
+.custom-file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+    &+label {
+        font-size: 1em;
+        font-weight: 700;
+        background-color: white;
+        display: inline-block;
+        cursor: pointer;
+        width: 100%;
+        display: block;
+        text-align: center;
+        box-shadow: 0 0px 6px rgb(0 0 0 / 1%), 0 0px 6px rgb(0 0 0 / 13%);
+        border-radius: 4px;
+        color: #444;
+        padding: 8px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        p{
+            margin: 0;
+        }
+    }
+}

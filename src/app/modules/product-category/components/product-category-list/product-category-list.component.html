@@ -1,0 +1,27 @@
+<button mat-button
+    (click)="openAdd(null)">Add Root<mat-icon class="ml8">add</mat-icon></button>
+
+<Tree [nodes]="nodes"
+    [options]="options"
+    (moveNode)="nodeMoved($event)">
+    <ng-template #treeNodeTemplate
+        let-node
+        let-index="index">
+        <span>{{ node.data.name }}</span>
+        <button mat-icon-button
+            color='primary'
+            (click)="openEdit(node)">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button
+            color='warn'
+            *ngIf="!node.hasChildren"
+            (click)="deleteNode(node)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button
+            (click)="openAdd(node.id)">
+            <mat-icon>add</mat-icon>
+        </button>
+    </ng-template>
+</Tree>

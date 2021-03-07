@@ -1,0 +1,53 @@
+<div class="wrapper ma">
+    <mat-card>
+        <mat-card-title>
+            {{'LOGIN' | translate}}
+        </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="form"
+                fxLayout='column'>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'USERNAME' | translate}}</mat-label>
+                    <input matInput
+                        placeholder="username"
+                        formControlName='username'
+                        required>
+                </mat-form-field>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'PASSWORD' | translate}}</mat-label>
+                    <input type='password'
+                        matInput
+                        placeholder="username"
+                        formControlName='password'
+                        required>
+                </mat-form-field>
+                <div>
+                    <button class="mt8"
+                        mat-raised-button
+                        color='primary'
+                        [disabled]='form.invalid || loading'
+                        (click)="login()">{{'LOGIN' | translate}}</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <div class="mt8"
+        fxLayout='row'
+        fxLayoutAlign='space-between'>
+        <button mat-button
+            color='primary'
+            routerLink='/request-otp'>{{'FORGOT_PASSWORD' | translate}}?</button>
+        <button mat-button
+            color='primary'
+            routerLink='/register'>{{'REGISTER' | translate}}</button>
+    </div>
+    <mat-divider class="mt8 mb8"></mat-divider>
+    <button mat-button
+        color='primary'
+        routerLink='/'>
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        {{'HOME' | translate}}
+    </button>
+</div>

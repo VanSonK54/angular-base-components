@@ -1,0 +1,36 @@
+<div class="wrapper ma">
+    <mat-card>
+        <h3>
+            {{'ENTER_PHONE_OR_EMAIL' | translate}}
+        </h3>
+        <mat-card-content>
+            <form [formGroup]="form"
+                fxLayout='column'>
+                <mat-form-field appearance='outline'
+                    validationMessageContainer>
+                    <mat-label>{{'PHONE_OR_EMAIL' | translate}}</mat-label>
+                    <input type="text"
+                        matInput
+                        placeholder="Phone or Email"
+                        formControlName='otpDestination'
+                        required #input [ngModel]="input.value | lowercase" (ngModelChange)="input.value=$event?.trim()">
+                </mat-form-field>
+                <div class="mt8">
+                    <button mat-stroked-button
+                        color='primary'
+                        [disabled]="form.invalid || loading"
+                        (click)="requestOtp()">{{'CONTINUE' | translate}}
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <div class="mt8"
+        fxLayout='row'>
+        <div fxFlex></div>
+        <button mat-button
+            color='primary'
+            routerLink='/login'>Login</button>
+    </div>
+</div>

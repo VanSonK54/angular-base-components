@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Edit Culture</h1>
+<form [formGroup]="form">
+    <div mat-dialog-content class="pb16" fxLayout="column">
+        <mat-form-field appearance='outline'
+            validationMessageContainer>
+            <mat-label>Name</mat-label>
+            <input matInput
+                placeholder='Name'
+                formControlName='name'
+                required>
+        </mat-form-field>
+
+        <app-file-uploader #uploader (onFilesSelected)="onFilesSelected($event)" [files]="files"></app-file-uploader>
+    </div>
+
+    <app-add-footer [form]='form' [loading]='loading'
+        (onCancel)="closeDialog()"
+        (onSave)="save()"></app-add-footer>
+</form>

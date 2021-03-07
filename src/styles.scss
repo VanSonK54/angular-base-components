@@ -1,0 +1,17 @@
+// Third-party library styles
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+// Tree
+@import '~@circlon/angular-tree-component/css/angular-tree-component.css';
+
+// Local styles
+@import 'settings/setting.scss';
+@import 'tools/tools.scss';
+@import 'generic/generic.scss';
+@import 'elements/elements.scss';
+@import 'objects/objects.scss';
+@import 'utilities/utilities.scss';
+@import 'theme/theme.scss';
+@import 'overwrites/overwrites.scss';

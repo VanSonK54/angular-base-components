@@ -1,0 +1,47 @@
+@import 'settings/color.settings';
+
+// Sidenav
+mat-drawer-container {
+    height: 100vh;
+    overflow-y: auto;
+
+    mat-drawer {
+        width: 200px;
+    }
+
+    mat-drawer-container {
+        overflow-y: auto;
+    }
+}
+
+// List
+.mat-list-item {
+    &:hover {
+        background-color: $grey;
+    }
+
+    &.active-link {
+        background-color: $grey;
+    }
+}
+
+// Icon
+.mat-icon {
+    &.medium {
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    &.large {
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    &.xlarge {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+    }
+}

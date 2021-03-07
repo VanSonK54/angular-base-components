@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Edit Product Category</h1>
+<form [formGroup]="form">
+    <mat-form-field appearance='outline'
+        validationMessageContainer>
+        <mat-label>Title</mat-label>
+        <input matInput
+            placeholder='Title'
+            formControlName='title'
+            required>
+    </mat-form-field>
+
+    <app-add-footer [form]="form" [loading]="loading"  (onCancel)="closeDialog()"
+    (onSave)="save()"></app-add-footer>
+</form>

@@ -1,0 +1,17 @@
+.node-wrapper {
+    align-items: center;
+}
+
+.toggle-children{
+    height: 24px;
+    width: 24px;
+}
+
+.toggle-children-wrapper-collapsed .toggle-children {
+    transform: rotate(0);
+    background-image: url('../../assets/images/closed-folder.png');
+}
+.toggle-children-wrapper-expanded .toggle-children {
+    transform: rotate(0);
+    background-image: url('../../assets/images/opened-folder.png');
+}

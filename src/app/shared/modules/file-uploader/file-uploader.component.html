@@ -1,0 +1,60 @@
+<div fxLayout="column"
+    class="uploader">
+    <div>
+        <div *ngIf="multiple; else singleUploader">
+            <input type="file"
+            multiple
+            id="multiple-uploader"
+            (change)='filesSelected($event)'
+            class="custom-file-input"
+            #multipleInput />
+            <label for="multiple-uploader">
+                <mat-icon class="large">cloud_upload</mat-icon>
+                <p>Click to Choose files</p>
+            </label>
+        </div>
+
+        <ng-template #singleUploader>
+            <input type="file"
+                id="single-uploader"
+                class="custom-file-input"
+                (change)='filesSelected($event)'
+                #singleInput />
+            <label for="single-uploader">
+                <mat-icon class="large">cloud_upload</mat-icon> 
+                <p>Click to Choose a file</p>
+            </label>
+        </ng-template>
+    </div>
+
+    <h3 class="mb0 mt16"
+        *ngIf="selectedFiles?.length">
+        Selected Files
+    </h3>
+    <div *ngFor="let file of files"
+        fxLayout='row nowrap'
+        fxLayoutAlign='space-between center'
+        fxLayoutGap='8px'>
+        <span>{{ file.fileName }}</span>
+        <button mat-icon-button
+            color='warn'
+            (click)="removeFile(file.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+    <div *ngFor="let file of selectedFiles; let i = index"
+        fxLayout='row nowrap'
+        fxLayoutAlign='space-between center'
+        fxLayoutGap='8px'>
+        <span>{{ file.name }}</span>
+        <span>{{ file.size/1024/1024 | number:'.2' }} MB</span>
+        <button mat-icon-button
+            color='warn'
+            (click)="remove(i)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+
+    <!-- <button mat-stroked-button
+        (click)='upload()'>upload</button> -->
+</div>

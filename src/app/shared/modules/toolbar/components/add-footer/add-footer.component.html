@@ -1,0 +1,4 @@
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign='space-between center' class="pt16">
+    <button mat-raised-button color='primary' (click)="save($event)" cdkFocusInitial [disabled]="form.invalid || form.disabled || loading">Save</button>
+    <button mat-stroked-button mat-dialog-close>Cancel</button>
+</div>

@@ -1,0 +1,11 @@
+@import 'settings/color.settings';
+@import 'settings/global.settings';
+
+.custom-chips {
+    background-color: $grey;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0px 4px;
+    margin: 4px;
+    font-size: 12px;
+}

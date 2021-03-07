@@ -1,0 +1,61 @@
+<div class="wrapper ma">
+    <form [formGroup]="form">
+        <mat-card>
+            <mat-card-title>
+                {{'PHONE_CODE' | translate}}
+            </mat-card-title>
+            <mat-card-content fxLayout='column'>
+                <mat-form-field appearance='outline'
+                    validationMessageContainer>
+                    <mat-label>{{'PHONE_CODE' | translate}}</mat-label>
+                    <input type="text"
+                        matInput
+                        formControlName='cellphoneOtp'
+                        required>
+                </mat-form-field>
+            </mat-card-content>
+            <div *ngIf='emailIsFilled'>
+                <mat-divider></mat-divider>
+                <br>
+                <mat-card-title>
+                    {{'EMAIL_CODE' | translate}}
+                </mat-card-title>
+                <div>
+                    <mat-icon color='warn'
+                        class="vertical-middle mr8">announcement</mat-icon>
+                    <span class="font-small">
+                       {{'EMAIL_CODE_ANNOUNCEMENT' | translate}}
+                    </span>
+                </div>
+                <br>
+                <mat-card-content fxLayout='column'>
+                    <mat-form-field appearance='outline'
+                        validationMessageContainer>
+                        <mat-label>{{'EMAIL_CODE' | translate}}</mat-label>
+                        <input type="text"
+                            matInput
+                            formControlName='emailOtp'>
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+            </div>
+            <mat-card-content>
+                <br *ngIf='emailIsFilled'>
+                <button mat-raised-button
+                    color='primary'
+                    [disabled]="form.invalid || loading"
+                    (click)="finishRegister()">{{'FINISH_REGISTER' | translate}}</button>
+            </mat-card-content>
+        </mat-card>
+    </form>
+    <div class="center p24">
+        <div *ngIf='(time | async) !== 0; else sendAgainButton'>{{time | async}} <span class="op6">{{'SECOND' | translate}}</span></div>
+        <ng-template #sendAgainButton>
+            <div>
+                <button mat-raised-button
+                    [disabled]='loading'
+                    (click)="callCellphoneOtp()">{{'SEND_CODE_AGAIN' | translate}}</button>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+@import 'settings/color.settings';
+
+p.validation-message {
+    font-size: 12px;
+    color: $red;
+    &:not(.hide){
+        margin: 0 0 8px;
+    }
+    &.hide {
+        margin: 0;
+    }
+}

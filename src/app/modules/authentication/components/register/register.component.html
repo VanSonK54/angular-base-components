@@ -1,0 +1,88 @@
+<div class="wrapper ma">
+    <mat-card>
+        <mat-card-title>{{'REGISTER' | translate}}</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="form"
+                fxLayout='column'>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'USERNAME' | translate}}</mat-label>
+                    <input matInput
+                        [placeholder]="'USERNAME' | translate"
+                        formControlName='username'
+                        required>
+                </mat-form-field>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'PASSWORD' | translate}}</mat-label>
+                    <input type='password'
+                        matInput
+                        [placeholder]="'PASSWORD' | translate"
+                        formControlName='password'
+                        required>
+                </mat-form-field>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'CONFIRM_PASSWORD' | translate}}</mat-label>
+                    <input type='password'
+                        matInput
+                        [placeholder]="'CONFIRM_PASSWORD' | translate"
+                        formControlName='passwordConfirm'
+                        required>
+                </mat-form-field>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'PHONE' | translate}}</mat-label>
+                    <input matInput
+                        [placeholder]="'PHONE' | translate"
+                        formControlName='cellPhone'
+                        required>
+                </mat-form-field>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'ROLE' | translate}}</mat-label>
+                    <mat-select matNativeControl
+                        required
+                        formControlName='role'>
+                        <mat-option value="Customer">{{'CUSTOMER' | translate}}</mat-option>
+                        <mat-option value="Vendor">{{'VENDOR' | translate}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline"
+                    validationMessageContainer>
+                    <mat-label>{{'EMAIL' | translate}}</mat-label>
+                    <input matInput
+                        [placeholder]="('EMAIL' | translate) + ' (' + ('OPTIONAL' | translate) +')'"
+                        formControlName='email'
+                        #input
+                        [ngModel]="input.value | lowercase"
+                        (ngModelChange)="input.value=$event?.trim()">
+                </mat-form-field>
+                <div>
+                    <button class="mt8"
+                        mat-stroked-button
+                        color='primary'
+                        (click)="callOtp()"
+                        [disabled]="form.invalid || loading">
+                        {{'CONTINUE' | translate}}
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <div class="mt8"
+        fxLayout='row'
+        fxLayoutAlign='space-between'>
+        <button mat-button
+            color='primary'
+            routerLink='/'>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+            {{'HOME' | translate}}
+        </button>
+        <button mat-button
+            color='primary'
+            routerLink='/login'>{{'LOGIN' | translate}}</button>
+    </div>
+
+</div>

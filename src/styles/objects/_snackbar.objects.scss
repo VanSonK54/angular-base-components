@@ -1,0 +1,18 @@
+.mat-snack-bar-container{
+    &--success {
+        background-color: #4CAF50;
+        color: white;
+    }
+    &--error {
+        background-color: #f44336;
+        color: white;
+    }
+    &--warnin {
+        background-color: #FF9800;
+        color: white;
+    }
+    &--info {
+        background-color: #2196F3;
+        color: white;
+    }
+}

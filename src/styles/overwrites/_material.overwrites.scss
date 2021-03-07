@@ -1,0 +1,33 @@
+@import 'settings/global.settings.scss';
+
+.mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+.ngx-datatable.material {
+    box-shadow: $box-shadow;
+    border-radius: 3px;
+
+    .empty-row {
+        padding: 0 1.2rem;
+        line-height: 50px;
+    }
+}
+
+.mat-expansion-panel-header {
+    padding: 0 16px !important;
+    font-size: 16px;
+}
+
+.mat-expansion-panel-body{
+    padding: 0 8px 16px !important;
+}
+
+.mat-dialog-container{
+    max-width: 900px;
+}
+
+.mat-form-field{
+    width: 100% !important;
+    max-width: 100% !important;
+}

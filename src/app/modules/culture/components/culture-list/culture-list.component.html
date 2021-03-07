@@ -1,0 +1,23 @@
+<app-list-toolbar (onAdd)='openAdd()'
+    (onSearch)="search($event)"></app-list-toolbar>
+<ngx-datatable class="material"
+    [rows]="rows"
+    [columns]="columns"
+    [loadingIndicator]="datatableInputs.loading"
+    [columnMode]="datatableInputs.columnMode"
+    [headerHeight]="datatableInputs.headerHeight"
+    [footerHeight]="datatableInputs.footerHeight"
+    [rowHeight]="datatableInputs.rowHeight"
+    [reorderable]="datatableInputs.reorderable"
+    [externalPaging]="datatableInputs.externalPaging"
+    [count]="datatableInputs.count"
+    [offset]="datatableInputs.offset"
+    [limit]="datatableInputs.limit"
+    (page)="setPage($event)"
+    (sort)="sort($event)">
+</ngx-datatable>
+
+<ng-template #actions let-row="row" let-value="value" let-button="column.actions" let-rowIndex="rowIndex">
+    <app-actions (onEdit)="openEdit(row)"
+        (onRemove)="remove(row.id)"></app-actions>
+</ng-template>

@@ -1,0 +1,43 @@
+@import 'tools/tools.scss';
+
+//#region padding
+@include padding-producer(0);
+@include padding-producer(4);
+@include padding-producer(8);
+@include padding-producer(16);
+@include padding-producer(24);
+@include padding-producer(32);
+@include padding-producer(40);
+@include padding-producer(48);
+//#endregion padding
+
+//#region margin
+@include margin-producer(0);
+@include margin-producer(4);
+@include margin-producer(8);
+@include margin-producer(16);
+@include margin-producer(24);
+@include margin-producer(32);
+@include margin-producer(40);
+@include margin-producer(48);
+
+.mla {
+    margin-left: auto;
+}
+
+.mra {
+    margin-right: auto;
+}
+
+.ma {
+    margin: auto;
+}
+
+//#endregion margin
+
+//#region position
+.relative {
+    position: relative;
+}
+
+//#endregion 
